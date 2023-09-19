@@ -15,9 +15,16 @@
   margin-top: 38px;
 }
 
-.start {
+.link {
+  display: inline-block;
+  color: var(--Black);
   background-color: var(--Primary);
   margin-bottom: 50px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 18px 48px;
+  box-shadow: 2px 2px 4px 0;
 }
 
 .desc {
@@ -32,4 +39,3 @@
     font-weight: 400;
   }
 }
-

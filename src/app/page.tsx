@@ -1,13 +1,16 @@
-import Image from "next/image";
+"use client";
+
 import styles from "./page.module.css";
 import Button from "@/modules/Button/Button";
 import Header from "@/components/Header/Header";
-import { level1 } from "@/assets";
 import ScrollAnimation from "@/components/ScrollAnimation/ScrollAnimation";
 import CardGroup from "@/components/CardGroup/CardGroup";
 import Footer from "@/components/Footer/Footer";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles["main-layout"]}>
       <Header />
@@ -27,7 +30,9 @@ export default function Home() {
 
         <CardGroup />
 
-        <Button className={styles.start}>시작하기</Button>
+        <Link href="/quiz" className={styles.link}>
+          시작하기
+        </Link>
       </main>
       <Footer />
     </div>
