@@ -24,7 +24,9 @@ function Card({ level, imgUrl, title, content, tags }: Props) {
       <p className={style.content}>{content}</p>
       <div className={style["tag-box"]}>
         {tags.map((tag) => (
-          <span key={tag}>#{tag}</span>
+          <span key={tag} className={style.tag}>
+            #{tag}
+          </span>
         ))}
       </div>
     </div>

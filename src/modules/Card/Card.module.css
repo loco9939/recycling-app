@@ -28,3 +28,8 @@
   justify-content: center;
   gap: 36px;
 }
+
+.tag {
+  font-weight: 400;
+  color: var(--Primary);
+}
