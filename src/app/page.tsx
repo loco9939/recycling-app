@@ -25,9 +25,7 @@ export default function Home() {
 
         <ScrollAnimation />
 
-        <div className={styles["card-group-container"]}>
-          <CardGroup />
-        </div>
+        <CardGroup />
 
         <Button className={styles.start}>시작하기</Button>
       </main>
