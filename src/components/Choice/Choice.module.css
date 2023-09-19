@@ -1,0 +1,37 @@
+.choice {
+  margin-top: 38px;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  gap: 57px;
+  align-items: center;
+  padding: 18px;
+  background-color: var(--White);
+  border: 1px solid var(--Gray);
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.active {
+  border: 1px solid var(--Primary);
+}
+
+.activeBtn {
+  background-color: var(--Primary);
+}
+
+.next {
+  width: 158px;
+  margin-top: 22px;
+  position: relative;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--Black) 2px 4px 4px 0px;
+  .arrowRight {
+    position: absolute;
+    top: 22px;
+    right: 18px;
+  }
+}

@@ -1,0 +1,20 @@
+.problem {
+  position: relative;
+  border: 1px solid var(--Black);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 48px;
+}
+
+.count {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 400;
+  padding-inline: 5px;
+  top: -19px;
+  background-color: var(--White);
+}
+
+.content {
+  font-weight: 400;
+}
