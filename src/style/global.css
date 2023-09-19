@@ -26,6 +26,10 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
+  &:disabled {
+    background-color: var(--Gray_Secondary);
+  }
 }
 
 img,

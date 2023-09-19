@@ -6,6 +6,7 @@ function Button(props: ButtonHTMLAttributes<HTMLButtonElement>) {
     <button
       className={`${style.button} ${props.className}`}
       style={props.style}
+      {...props}
     >
       {props.children}
     </button>
