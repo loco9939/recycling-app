@@ -16,6 +16,16 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--White);
+}
+
+a {
+  color: var(--Primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 img,
