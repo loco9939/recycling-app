@@ -6,11 +6,9 @@ import Header from "@/components/Header/Header";
 import ScrollAnimation from "@/components/ScrollAnimation/ScrollAnimation";
 import CardGroup from "@/components/CardGroup/CardGroup";
 import Footer from "@/components/Footer/Footer";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div className={styles["main-layout"]}>
       <Header />
