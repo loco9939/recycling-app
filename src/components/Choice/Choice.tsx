@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Button from "@/modules/Button/Button";
 import style from "./Choice.module.css";
 import { Quiz } from "@/assets/quiz";
@@ -14,7 +14,7 @@ interface Props {
 function Choice({ quiz, moveNext, addUserAnswer }: Props) {
   const [select, setSelect] = useState<string>("");
 
-  const { choice } = quiz;
+  const { id, choice } = quiz;
 
   const toggleSelect = (key: string) => {
     if (select === key) {
@@ -24,7 +24,7 @@ function Choice({ quiz, moveNext, addUserAnswer }: Props) {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setSelect("");
   }, [quiz]);
   return (
@@ -37,7 +37,7 @@ function Choice({ quiz, moveNext, addUserAnswer }: Props) {
           className={`${style.btn} ${select === key ? style.active : ""}`}
         >
           <span>{key}.</span>
-          <span>{value}</span>
+          <span className={style["btn-text"]}>{value}</span>
         </button>
       ))}
       <Button
@@ -48,7 +48,7 @@ function Choice({ quiz, moveNext, addUserAnswer }: Props) {
           addUserAnswer(select);
         }}
       >
-        다음
+        {id === 10 ? "제출하기" : "다음"}
         {select !== "" && (
           <Image src={arrowRight} alt="디음" className={style.arrowRight} />
         )}

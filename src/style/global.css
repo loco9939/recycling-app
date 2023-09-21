@@ -28,6 +28,7 @@ button {
   cursor: pointer;
   border: none;
   &:disabled {
+    cursor: default;
     background-color: var(--Gray_Secondary);
   }
 }

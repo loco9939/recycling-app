@@ -2,15 +2,9 @@ import { level1 } from "@/assets";
 import Image from "next/image";
 import React from "react";
 import style from "./Card.module.css";
+import { Card } from "@/assets/cards";
 
-interface Props {
-  level: number;
-  imgUrl: string;
-  title: string;
-  content: string;
-  tags: string[];
-}
-function Card({ level, imgUrl, title, content, tags }: Props) {
+function Card({ level, imgUrl, title, content, tags }: Card) {
   return (
     <div className={style.card}>
       <Image

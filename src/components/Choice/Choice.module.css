@@ -9,13 +9,19 @@
   align-items: center;
   padding: 18px;
   background-color: var(--White);
-  border: 1px solid var(--Gray);
+  border: none;
+  outline: 1px solid var(--Gray);
   border-radius: 12px;
   margin-bottom: 28px;
+  text-align: center;
+  .btn-text {
+    width: 100%;
+  }
 }
 
 .active {
-  border: 1px solid var(--Primary);
+  border: none;
+  outline: 2px solid var(--Primary);
 }
 
 .activeBtn {
