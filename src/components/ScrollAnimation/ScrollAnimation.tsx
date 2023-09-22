@@ -65,11 +65,6 @@ interface InfiniteLoopSliderProps extends React.HTMLAttributes<HTMLDivElement> {
   reverse: boolean | number;
 }
 
-interface CustomStyleProperties {
-  "--duration": string;
-  "--direction": string;
-}
-
 function InfiniteLoopSlider({
   children,
   duration,
@@ -79,10 +74,8 @@ function InfiniteLoopSlider({
     <div
       className={style["loop-slider"]}
       style={{
-        ...({
-          "--duration": `${duration}ms`,
-          "--direction": reverse ? "reverse" : "normal",
-        } as CustomStyleProperties),
+        "--duration": `${duration}ms`,
+        "--direction": reverse ? "reverse" : "normal",
       }}
     >
       <div className={style.inner}>
