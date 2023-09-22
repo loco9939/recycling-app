@@ -1,17 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import style from "./ScrollAnimation.module.css";
 
-const TAGS = [
-  "분리수거",
-  "ESG",
-  "재활용",
-  "Recycling",
-  "지구살리기",
-  "환경캠페인",
-  "EcoFriendly",
-  "친환경",
-  "Environment",
-];
+// const TAGS = [
+//   "분리수거",
+//   "ESG",
+//   "재활용",
+//   "Recycling",
+//   "지구살리기",
+//   "환경캠페인",
+//   "EcoFriendly",
+//   "친환경",
+//   "Environment",
+// ];
 const DURATION = 15000;
 const ROWS = 5;
 const TAGS_PER_ROW = 5;
@@ -21,6 +22,21 @@ const random = (min: number, max: number) =>
 const shuffle = (arr: string[]) => [...arr].sort(() => 0.5 - Math.random());
 
 function ScrollAnimation() {
+  const [tags, setTags] = useState<string[]>([]);
+
+  useEffect(() => {
+    setTags([
+      "분리수거",
+      "ESG",
+      "재활용",
+      "Recycling",
+      "지구살리기",
+      "환경캠페인",
+      "EcoFriendly",
+      "친환경",
+      "Environment",
+    ]);
+  }, []);
   return (
     <div className={style["scroll-animation"]}>
       <div className={style["tag-list"]}>
@@ -30,8 +46,8 @@ function ScrollAnimation() {
             duration={random(DURATION - 5000, DURATION + 5000)}
             reverse={i % 2}
           >
-            {shuffle(TAGS)
-              .slice(0, TAGS_PER_ROW)
+            {shuffle(tags)
+              // .slice(0, TAGS_PER_ROW)
               .map((tag) => (
                 <Tag text={tag} key={tag} />
               ))}

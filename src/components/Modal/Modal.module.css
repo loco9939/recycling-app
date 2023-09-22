@@ -1,13 +1,15 @@
 .container {
   width: 350px;
+  height: 650px;
   padding: 15px;
   border: 1px solid var(--Gray);
   border-radius: 12px;
   background-color: var(--White);
   position: absolute;
-  top: 50%;
+  top: 28px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  overflow-y: scroll;
 }
 
 .img {
