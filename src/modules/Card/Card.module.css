@@ -1,0 +1,35 @@
+.card {
+  width: 174px;
+  padding: 28px 18px 12px 18px;
+  border: 1px solid var(--Primary);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img {
+  margin-inline: auto;
+}
+
+.title {
+  margin-block: 22px;
+  font-size: 18px;
+}
+
+.content {
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+
+.tag-box {
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.tag {
+  font-weight: 400;
+  color: var(--Primary);
+}

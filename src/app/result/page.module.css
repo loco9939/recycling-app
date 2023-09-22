@@ -1,0 +1,26 @@
+.celebration {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.level {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.tag-box {
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.tag {
+  font-weight: 400;
+  padding: 9px 26px;
+  border-radius: 12px;
+  background-color: var(--Primary);
+  box-shadow: 2px 2px 4px 0;
+}

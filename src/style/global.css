@@ -16,6 +16,22 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--White);
+}
+
+a {
+  color: var(--Primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: var(--Black);
+  &:disabled {
+    cursor: default;
+    background-color: var(--Gray_Secondary);
+  }
 }
 
 img,
