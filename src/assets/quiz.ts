@@ -85,7 +85,7 @@ export const quiz: Quiz[] = [
   },
   {
     id: 8,
-    title: `다음 분리수거 방법 중 잘못된 것은?`,
+    title: `다음 분리수거 방법 중 <span style="color:red; text-decoration:underline">잘못된</span> 것은?`,
     choice: {
       A: "향수, 샴푸 등 펌핑식 용기는 부속품(노즐, 스프링)은 분리해 배출하고 본체는 세척 후 배출한다.",
       B: "배달음식물 중 수분이 적고 딱딱한 음식물은 일반 쓰레기에 버려도 된다.",

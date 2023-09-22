@@ -3,7 +3,7 @@
 import Choice from "@/components/Choice/Choice";
 import Problem from "@/components/Problem/Problem";
 import { quiz } from "@/assets/quiz";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Spinner from "@/modules/Spinner/Spinner";
 import { useRouter } from "next/navigation";
 
@@ -39,6 +39,10 @@ function Quiz() {
   const addUserAnswer = (key: string) => {
     setUserAnswers([...userAnswers, key]);
   };
+
+  useEffect(() => {
+    setUserAnswers([]);
+  }, []);
 
   if (currentIndex === 10) return <Spinner />;
 

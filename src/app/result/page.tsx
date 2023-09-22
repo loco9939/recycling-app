@@ -2,13 +2,14 @@
 
 import { Card, cards } from "@/assets/cards";
 import style from "./page.module.css";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Spinner from "@/modules/Spinner/Spinner";
 import Button from "@/modules/Button/Button";
 import { colors } from "@/style/colors";
+import Error from "@/components/Error/Error";
 
 enum LoadingState {
   Loading,
@@ -17,11 +18,16 @@ enum LoadingState {
 }
 
 function Result() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [userLevel, setUserLevel] = useState<Card | null>(null);
   const [loadingState, setLoadingState] = useState<LoadingState>(
     LoadingState.Loading
   );
+
+  const retry = () => {
+    router.push("/quiz");
+  };
 
   useEffect(() => {
     setLoadingState(LoadingState.Loading);
@@ -37,17 +43,9 @@ function Result() {
     }
   }, [searchParams]);
 
-  if (loadingState === LoadingState.Loading) {
-    return <Spinner />;
-  }
+  if (loadingState === LoadingState.Loading) return <Spinner />;
 
-  if (loadingState === LoadingState.Error || !userLevel)
-    return (
-      <main style={{ padding: "43px 20px 0 20px", textAlign: "center" }}>
-        <p>잘못된 접근입니다.</p>
-        <Link href="/">메인 화면으로 돌아가기</Link>
-      </main>
-    );
+  if (loadingState === LoadingState.Error || !userLevel) return <Error />;
 
   const { imgUrl, title, content, tags } = userLevel;
   return (
@@ -85,7 +83,10 @@ function Result() {
         >
           오답노트 보기
         </Button>
-        <Button style={{ width: "298px", backgroundColor: colors.Primary }}>
+        <Button
+          style={{ width: "298px", backgroundColor: colors.Primary }}
+          onClick={retry}
+        >
           다시 도전하기
         </Button>
       </section>
