@@ -21,7 +21,7 @@ export const cards: Card[] = [
     imgUrl: level2,
     title: "가지 2단계",
     content: "분리수거에 어느정도 일가견이 있으신 가지 단계",
-    tags: ["가지", "분자감"],
+    tags: ["가지", "분리노력형"],
   },
   {
     level: "3",
