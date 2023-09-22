@@ -4,6 +4,7 @@
 .tag-list {
   width: 30rem;
   max-width: 90vw;
+  margin-inline: auto;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
