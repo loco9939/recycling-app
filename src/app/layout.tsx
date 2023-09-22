@@ -8,8 +8,8 @@ const NotoSanKR = Noto_Sans_KR({
 });
 
 export const metadata = {
-  title: "Recycling-App",
-  description: "분리수거 퀴즈 App",
+  title: "Recycling-King",
+  description: "분리수거 퀴즈왕",
 };
 
 export default function RootLayout({
