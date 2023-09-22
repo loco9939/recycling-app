@@ -29,7 +29,10 @@
 
 .desc {
   text-align: center;
-  margin: 50px;
+  padding-block: 18px;
+  margin-block: 50px;
+  color: var(--White);
+  background-color: var(--Black);
   .desc-title {
     font-size: 24px;
     font-weight: 700;
