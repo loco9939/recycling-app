@@ -6,6 +6,7 @@ import { quiz } from "@/assets/quiz";
 import { useEffect, useMemo, useState } from "react";
 import Spinner from "@/modules/Spinner/Spinner";
 import { useRouter } from "next/navigation";
+import { stringify } from "querystring";
 
 function Quiz() {
   const router = useRouter();
@@ -27,11 +28,18 @@ function Quiz() {
     }
   }, [currentIndex]);
 
-  const moveNext = () => {
+  const moveNext = (key: string) => {
+    addUserAnswer(key);
     setCurrentIndex(currentIndex + 1);
+    window.scrollTo(0, 0);
+
     if (currentIndex === 9) {
       setTimeout(() => {
         router.push(`/result?level=${userLevel}`, {});
+        localStorage.setItem(
+          "userAnswer",
+          JSON.stringify([...userAnswers, key])
+        );
       }, 1000);
     }
   };
@@ -53,7 +61,6 @@ function Quiz() {
       <Choice
         quiz={quiz[currentIndex]}
         moveNext={moveNext}
-        addUserAnswer={addUserAnswer}
       />
     </main>
   );
