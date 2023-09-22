@@ -22,4 +22,5 @@
   padding: 9px 26px;
   border-radius: 12px;
   background-color: var(--Primary);
+  box-shadow: 2px 2px 4px 0;
 }

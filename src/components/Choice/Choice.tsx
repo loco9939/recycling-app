@@ -7,11 +7,10 @@ import { arrowRight } from "@/assets";
 
 interface Props {
   quiz: Quiz;
-  moveNext: () => void;
-  addUserAnswer: (key: string) => void;
+  moveNext: (key: string) => void;
 }
 
-function Choice({ quiz, moveNext, addUserAnswer }: Props) {
+function Choice({ quiz, moveNext }: Props) {
   const [select, setSelect] = useState<string>("");
 
   const { id, choice } = quiz;
@@ -43,13 +42,10 @@ function Choice({ quiz, moveNext, addUserAnswer }: Props) {
       <Button
         className={`${style.next} ${select === "" ? "" : style.activeBtn}`}
         disabled={select === ""}
-        onClick={() => {
-          moveNext();
-          addUserAnswer(select);
-        }}
+        onClick={() => moveNext(select)}
       >
         {id === 10 ? "제출하기" : "다음"}
-        {select !== "" && (
+        {select !== "" && id !== 10 && (
           <Image src={arrowRight} alt="디음" className={style.arrowRight} />
         )}
       </Button>
