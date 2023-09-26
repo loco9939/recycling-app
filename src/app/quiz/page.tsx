@@ -6,7 +6,7 @@ import { quiz } from "@/assets/quiz";
 import { useEffect, useMemo, useState } from "react";
 import Spinner from "@/modules/Spinner/Spinner";
 import { useRouter } from "next/navigation";
-import { stringify } from "querystring";
+import style from "./page.module.css";
 
 function Quiz() {
   const router = useRouter();
@@ -55,13 +55,10 @@ function Quiz() {
   if (currentIndex === 10) return <Spinner />;
 
   return (
-    <main style={{ padding: "20px", textAlign: "center" }}>
+    <main className={style["main-layout"]}>
       <Problem quiz={quiz[currentIndex]} index={currentIndex} />
 
-      <Choice
-        quiz={quiz[currentIndex]}
-        moveNext={moveNext}
-      />
+      <Choice quiz={quiz[currentIndex]} moveNext={moveNext} />
     </main>
   );
 }

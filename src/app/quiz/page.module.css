@@ -1,0 +1,10 @@
+.main-layout {
+  max-width: 390px;
+  margin-inline: auto;
+  min-height: 100vh;
+  padding:20px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  text-align: center;
+}
