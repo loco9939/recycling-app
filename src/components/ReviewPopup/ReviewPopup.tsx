@@ -20,10 +20,18 @@ function ReviewPopup() {
 
   const moveNext = () => {
     setCurrentIndex(currentIndex + 1);
+    const container = document.getElementById("modal");
+    if (container) {
+      container.scrollTop = 0; // 컴포넌트 내 스크롤을 상단으로 이동
+    }
   };
 
   const movePrev = () => {
     setCurrentIndex(currentIndex - 1);
+    const container = document.getElementById("modal");
+    if (container) {
+      container.scrollTop = 0; // 컴포넌트 내 스크롤을 상단으로 이동
+    }
   };
 
   const userAnswer = LocalUserAnswer[currentIndex];

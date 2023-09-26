@@ -59,10 +59,11 @@ function Result() {
   if (loadingState === LoadingState.Error || !userLevel) return <Error />;
 
   const { imgUrl, title, content, tags } = userLevel;
+
   return (
     <>
       {reviewModal && (
-        <Modal closeFn={() => setReviewModal(false)}>
+        <Modal id="modal" closeFn={() => setReviewModal(false)}>
           <ReviewPopup />
         </Modal>
       )}
