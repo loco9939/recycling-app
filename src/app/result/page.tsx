@@ -36,6 +36,7 @@ function Result() {
 
   const retry = () => {
     router.push("/");
+    localStorage.clear();
   };
 
   const showReview = () => setReviewModal(true);
