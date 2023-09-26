@@ -61,7 +61,7 @@ export const quiz: Quiz[] = [
   {
     id: 5,
     title: `다음 사진에 해당하는 물건을 분리수거 하는 방법으로 적절한 것은?`,
-    quizImg: "/lighter.jpeg",
+    quizImg: "/lighter.webp",
     choice: {
       A: "인화성 물질을 포함하고 있으므로 특별 분리수거 해야한다.",
       B: "재활용 되는 부분이 대부분이므로 플라스틱과 함께 버린다.",
@@ -101,7 +101,7 @@ export const quiz: Quiz[] = [
   {
     id: 8,
     title: `다음 사진은 제가 사용하는 유리병 향수입니다. 향수를 버리는 방법 중 <span style="color:red; text-decoration:underline">잘못된</span> 것은?`,
-    quizImg: "/perfume.jpeg",
+    quizImg: "/perfume.webp",
     choice: {
       A: "용기 내부의 남은 향수를 모두 비운 후 유리로 분리수거한다.",
       B: "용액이 많다면 신문지나 우유팩 등에 흡수시켜 일반쓰레기로 배출한다.",
@@ -135,10 +135,10 @@ export const quiz: Quiz[] = [
       D: "비닐에 담긴 음식물 쓰레기",
     },
     choiceImg: [
-      "/untagged.jpeg",
-      "/pet.jpeg",
-      "/beer_pet.jpeg",
-      "/food_trash.jpeg",
+      "/untagged.webp",
+      "/pet.webp",
+      "/beer_pet.webp",
+      "/food_trash.webp",
     ],
     answer: "B",
     solution:
