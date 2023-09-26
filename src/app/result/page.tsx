@@ -60,15 +60,16 @@ function Result() {
   if (loadingState === LoadingState.Error || !userLevel) return <Error />;
 
   const { imgUrl, title, content, tags } = userLevel;
+
   return (
     <>
       {reviewModal && (
-        <Modal closeFn={() => setReviewModal(false)}>
+        <Modal id="modal" closeFn={() => setReviewModal(false)}>
           <ReviewPopup />
         </Modal>
       )}
 
-      <main style={{ padding: "43px 20px 0 20px", textAlign: "center" }}>
+      <main className={style["main-layout"]} style={{}}>
         <h1 className={style.celebration}>축하합니다 !</h1>
         <section className={style.level}>
           <Image
@@ -91,14 +92,17 @@ function Result() {
 
         <section style={{ marginBottom: "50px" }}>
           <Button
-            style={{ width: "298px", backgroundColor: colors.Yellow }}
+            style={{
+              width: "100%",
+              backgroundColor: colors.Yellow,
+            }}
             onClick={share}
           >
             친구한테 공유하기
           </Button>
           <Button
             style={{
-              width: "298px",
+              width: "100%",
               backgroundColor: colors.Red,
               marginBlock: "38px",
             }}
@@ -108,7 +112,7 @@ function Result() {
           </Button>
           <Button
             style={{
-              width: "298px",
+              width: "100%",
               backgroundColor: colors.Primary,
             }}
             onClick={retry}

@@ -35,9 +35,13 @@ export default function Home() {
             </p>
           </section>
 
-          <ScrollAnimation />
+          <section className={styles.scrollAnimationBox}>
+            <ScrollAnimation />
+          </section>
 
-          <CardGroup />
+          <section className={styles.cardGroupBox}>
+            <CardGroup />
+          </section>
 
           <Link href="/quiz" className={styles.link}>
             시작하기

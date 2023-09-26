@@ -1,10 +1,18 @@
 .main-layout {
-  /* width: 390px; */
-  margin-inline: auto;
   min-height: 100vh;
 
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.scrollAnimationBox {
+  max-width: 390px;
+  margin-inline: auto;
+}
+
+.cardGroupBox {
+  max-width: 390px;
+  margin-inline: auto;
 }
 
 .main {
@@ -28,9 +36,11 @@
 }
 
 .desc {
+  max-width: 390px;
   text-align: center;
   padding-block: 18px;
   margin-block: 50px;
+  margin-inline: auto;
   color: var(--White);
   background-color: var(--Black);
   .desc-title {

@@ -13,7 +13,7 @@ interface Props {
 function Choice({ quiz, moveNext }: Props) {
   const [select, setSelect] = useState<string>("");
 
-  const { id, choice } = quiz;
+  const { id, choice, choiceImg } = quiz;
 
   const toggleSelect = (key: string) => {
     if (select === key) {
@@ -28,7 +28,7 @@ function Choice({ quiz, moveNext }: Props) {
   }, [quiz]);
   return (
     <div className={style.choice}>
-      {Object.entries(choice).map(([key, value]) => (
+      {Object.entries(choice).map(([key, value], index) => (
         <button
           key={key}
           id={key}
@@ -36,7 +36,22 @@ function Choice({ quiz, moveNext }: Props) {
           className={`${style.btn} ${select === key ? style.active : ""}`}
         >
           <span>{key}.</span>
-          <span className={style["btn-text"]}>{value}</span>
+          <div>
+            <span className={style["btn-text"]}>{value}</span>
+            {choiceImg && (
+              <Image
+                src={choiceImg[index]}
+                alt="choiceImg"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "100%",
+                  marginInline: "auto",
+                  marginTop: "18px",
+                }}
+              />
+            )}
+          </div>
         </button>
       ))}
       <Button

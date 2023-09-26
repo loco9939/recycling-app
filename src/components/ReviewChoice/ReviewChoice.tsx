@@ -6,6 +6,7 @@ import Button from "@/modules/Button/Button";
 interface Props {
   choice: { [key: string]: string };
   answer: string;
+  choiceImg?: string[];
   userAnswer: string;
   solution: string;
   currentIndex: number;
@@ -16,6 +17,7 @@ interface Props {
 function ReviewChoice({
   choice,
   answer,
+  choiceImg,
   userAnswer,
   solution,
   currentIndex,
@@ -24,7 +26,7 @@ function ReviewChoice({
 }: Props) {
   return (
     <div className={style.choice}>
-      {Object.entries(choice).map(([key, value]) => (
+      {Object.entries(choice).map(([key, value], index) => (
         <button
           key={key}
           id={key}
@@ -37,7 +39,22 @@ function ReviewChoice({
           } `}
         >
           <span>{key}.</span>
-          <span className={style["btn-text"]}>{value}</span>
+          <div>
+            <span className={style["btn-text"]}>{value}</span>
+            {choiceImg && (
+              <Image
+                src={choiceImg[index]}
+                alt="choiceImg"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "100%",
+                  marginInline: "auto",
+                  marginTop: "18px",
+                }}
+              />
+            )}
+          </div>
         </button>
       ))}
 

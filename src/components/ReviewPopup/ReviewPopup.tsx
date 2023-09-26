@@ -20,14 +20,22 @@ function ReviewPopup() {
 
   const moveNext = () => {
     setCurrentIndex(currentIndex + 1);
+    const container = document.getElementById("modal");
+    if (container) {
+      container.scrollTop = 0; // 컴포넌트 내 스크롤을 상단으로 이동
+    }
   };
 
   const movePrev = () => {
     setCurrentIndex(currentIndex - 1);
+    const container = document.getElementById("modal");
+    if (container) {
+      container.scrollTop = 0; // 컴포넌트 내 스크롤을 상단으로 이동
+    }
   };
 
   const userAnswer = LocalUserAnswer[currentIndex];
-  const { choice, answer, solution } = quiz[currentIndex];
+  const { choice, answer, solution,choiceImg } = quiz[currentIndex];
   return (
     <div className={style.container}>
       <p>맞춘 갯수: {answerCount} 문제</p>
@@ -44,6 +52,7 @@ function ReviewPopup() {
       <ReviewChoice
         choice={choice}
         answer={answer}
+        choiceImg={choiceImg}
         userAnswer={userAnswer}
         solution={solution}
         currentIndex={currentIndex}

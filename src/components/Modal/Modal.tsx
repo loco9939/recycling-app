@@ -6,9 +6,9 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   closeFn: () => void;
 }
 
-function Modal({ closeFn, children }: Props) {
+function Modal({ closeFn, children, ...restProps }: Props) {
   return (
-    <div className={style.container}>
+    <div className={style.container} {...restProps}>
       <Image
         src={close}
         alt="닫기"
